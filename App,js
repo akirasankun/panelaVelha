@@ -1,0 +1,18 @@
+import {View, Text, StyleSheet} from 'react-native'
+
+export default function App(){
+    return(
+        <View>
+            <Text>iniciado</Text>
+        </View>
+    )
+}
+
+const st_view = StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor:"#FF0000",
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+});
