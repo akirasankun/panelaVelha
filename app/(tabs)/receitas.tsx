@@ -1,16 +1,23 @@
-import { View, Text, StyleSheet, TextInput, Pressable,Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Pressable,Image,ScrollView } from 'react-native'
 
 
 export default function Receitas() {
   return (
     <View style={styles.page}>
+      <ScrollView>
       <View style={styles.title}>
-        <text style={styles.title_text}>Panela Velha</text>
+        <Pressable >
+          <Text style={styles.title_Text}>Panela Velha</Text>
+        </Pressable>
       </View>
       <View style={styles.receitas}>
+      <Pressable >
+          <Text style={styles.title_Text}>Receitas</Text>
+        </Pressable>
         <Card login='@Akira' titulo='Frango Xadrez' capa={require("../../assets/images/feijoada.png")}></Card>
         <Card login='@Jorge' titulo='Feijoada' capa={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}></Card>
       </View>
+      </ScrollView>
     </View>
   )
 }
@@ -21,18 +28,18 @@ const Card = (prop) => <View style={comp_styles.componente}>
 <View style={comp_styles.head}>
   <View style={comp_styles.foto}><Image source={prop.capa} style={comp_styles.foto_img}></Image></View>
   <View style={comp_styles.resumo}>
-    <View><Text  style={comp_styles.resumo_user}>{prop.login}</Text></View>
-    <View ><Text style={comp_styles.resumo_titulo}>{prop.titulo}</Text></View>
+    <View><Pressable ><Text  style={comp_styles.resumo_user}>{prop.login}</Text></Pressable></View>
+    <View><Pressable ><Text style={comp_styles.resumo_titulo}>{prop.titulo}</Text></Pressable></View>
   </View>
-  <View style={{width:'20%'}}><Text style={comp_styles.resumo_hora}>4 horas</Text></View>
+  <View style={{width:'20%'}}><Pressable ><Text style={comp_styles.resumo_hora}>4 horas</Text></Pressable></View>
 </View>
-<View style={comp_styles.body}><Text style={comp_styles.body_text}>Feito com poucos ingredientes para você, não esqueça de avaliar</Text></View>
+<View style={comp_styles.body}><Pressable ><Text style={comp_styles.body_Text}>Feito com poucos ingredientes para você, não esqueça de avaliar</Text></Pressable></View>
 <View>
 <View style={comp_styles.footer}>
   <View style={comp_styles.footer_botao}><Pressable style={styles.bt_receita} >VER RECEITA</Pressable ></View>
   <View style={comp_styles.footer_avaliacao}>
-    <View><Text>Estrelas</Text></View>
-    <View><Text>4,9 mi avaliações </Text></View>
+    <View><Pressable ><Text>Estrelas</Text></Pressable></View>
+    <View><Pressable ><Text>4,9 mi avaliações </Text></Pressable></View>
   </View>
 </View>
 </View>
@@ -64,7 +71,7 @@ const comp_styles = StyleSheet.create({
     flexDirection: 'row'
   },
 
-  body_text:{
+  body_Text:{
     color: "#000",
     fontSize: 25,
     fontFamily: 'Verdan',
@@ -142,20 +149,19 @@ const comp_styles = StyleSheet.create({
 const styles = StyleSheet.create({
   page: {
     flex: 1,
-    padding: 20,
-    flexDirection: 'column'
+    padding: 20
   },
 
   title: {
-    flex: 1,
     backgroundColor: "#CEBBBB",
     textAlign: "left",
     borderBottomWidth: 4,
     borderBottomColor: "#A17878",
     width: '100%',
-    height: 300
+    height: 60
   },
-  title_text: {
+
+  title_Text: {
     color: "#A17878",
     fontWeight: 'bold',
     fontSize: 30,
