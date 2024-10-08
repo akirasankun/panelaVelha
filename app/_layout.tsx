@@ -14,6 +14,8 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    BalooThamni: require('../assets/fonts/BalooThambi-Regular.ttf'),
+    Glacial: require('../assets/fonts/GlacialIndifference-Regular.otf'),
   });
 
   useEffect(() => {

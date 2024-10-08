@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
   title: {
     color: "#FFB266",
     fontWeight: 'bold',
-    fontSize: 22,
-    fontFamily: 'Verdan',
+    fontSize: 30,
+    fontFamily: 'BalooThamni',
     width: '100%',
     textAlign: 'center'
   },
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   bt_text: {
     textAlign: 'center',
     color: '#FFFFFF',
-    fontFamily: 'Verdana',
+    fontFamily: 'BalooThamni',
     fontWeight: 'bold',
     backgroundColor: "#00BFFF",
     height: 50,

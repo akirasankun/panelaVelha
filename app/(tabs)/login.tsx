@@ -25,23 +25,20 @@ export default function Login() {
         setSetError(error.message);
       });
   }
-
-
-
   return (
     <View style={styles.container}>
       <View style={styles.login}>
-        <Text style={styles.title}>Panela Velha</Text>
+      <Pressable><Text style={styles.title}>Panela Velha</Text>
         <Text style={styles.title}>
           {msg_error}
-        </Text>
+        </Text></Pressable>
         <TextInput style={styles.input} placeholder="E-mail" onChange={(e) => setEmail(e.target.value)}></TextInput>
         <TextInput style={styles.input} secureTextEntry={true} placeholder="Senha" onChange={(e) => setPassword(e.target.value)}></TextInput>
-        <Text style={styles.tx}>Esqueceu a senha?</Text>
+        <Pressable style={styles.tx}><Text style={styles.tx}>Esqueceu a senha?</Text></Pressable>
         <Pressable style={styles.bt} onPress={handleSignIn}>
           <Text style={styles.bt_text} >Login</Text >
         </Pressable >
-        <Text style={styles.tx}>Não tem uma conta? </Text>
+        <Pressable style={styles.tx}><Text style={styles.tx}>Não tem uma conta? </Text></Pressable>
         <Pressable style={styles.bt}>
           <Text style={styles.bt_text} >Cadastrar-se</Text >
         </Pressable >
@@ -68,15 +65,15 @@ const styles = StyleSheet.create({
   title: {
     color: "#FFB266",
     fontWeight: 'bold',
-    fontSize: 22,
-    fontFamily: 'Verdan',
+    fontSize: 30,
+    fontFamily: 'BalooThamni',
     width: '100%',
     textAlign: 'center'
   },
   tx: {
     color: "#00BFFF",
     fontSize: 14,
-    fontFamily: 'Verdan',
+    fontFamily: 'BalooThamni',
     width: '100%',
     textAlign: 'right'
   },
@@ -110,7 +107,7 @@ const styles = StyleSheet.create({
   bt_text: {
     textAlign: 'center',
     color: '#FFFFFF',
-    fontFamily: 'Verdana',
+    fontFamily: 'BalooThamni',
     fontWeight: 'bold',
     backgroundColor: "#00BFFF",
     height: 50,

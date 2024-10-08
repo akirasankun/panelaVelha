@@ -22,7 +22,6 @@ export default function Receitas() {
   )
 }
 
-
 const Card = (prop) => <View style={comp_styles.componente}>
 <View><Image source={prop.capa} style={comp_styles.imagem}></Image></View>
 <View style={comp_styles.head}>
@@ -67,14 +66,13 @@ const comp_styles = StyleSheet.create({
   head:{
     flex: 1,
     borderColor: '#cccccc',
-
     flexDirection: 'row'
   },
 
   body_Text:{
     color: "#000",
-    fontSize: 25,
-    fontFamily: 'Verdan',
+    fontSize: 15,
+    fontFamily: 'BalooThamni',
     width: '100%',
     textAlign: 'left',
     padding:10
@@ -88,12 +86,12 @@ const comp_styles = StyleSheet.create({
   },
 
   footer_botao:{
-    width: "50%",
-    borderBottomLeftRadius: 20,
+    width: "40%",
+    borderBottomLeftRadius: 15,
   },
 
   footer_avaliacao:{
-    width: "50%",
+    width: "60%",
     borderBottomRightRadius: 20,
   },
 
@@ -116,9 +114,8 @@ const comp_styles = StyleSheet.create({
 
   resumo_user: {
     color: "#000",
-    fontWeight: 'bold',
     fontSize: 18,
-    fontFamily: 'Verdan',
+    fontFamily: 'BalooThamni',
     width: '100%',
     paddingLeft: 5,
     paddingBottom: 5,
@@ -127,9 +124,8 @@ const comp_styles = StyleSheet.create({
 
   resumo_titulo: {
     color: "#000",
-    fontWeight: 'bold',
-    fontSize: 20,
-    fontFamily: 'Verdan',
+    fontSize: 15,
+    fontFamily: 'Glacial',
     width: '100%',
     paddingLeft: 5,
   },
@@ -138,7 +134,7 @@ const comp_styles = StyleSheet.create({
     color: "#000",
     fontWeight: 'bold',
     fontSize: 14,
-    fontFamily: 'Verdan',
+    fontFamily: 'BalooThamni',
     width: '100%',
     textAlign: 'right'
   }
@@ -153,7 +149,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    backgroundColor: "#CEBBBB",
+    backgroundColor: "#CCC",
     textAlign: "left",
     borderBottomWidth: 4,
     borderBottomColor: "#A17878",
@@ -162,10 +158,10 @@ const styles = StyleSheet.create({
   },
 
   title_Text: {
-    color: "#A17878",
+    color: "#FFB266",
     fontWeight: 'bold',
     fontSize: 30,
-    fontFamily: 'Verdan',
+    fontFamily: 'BalooThamni',
     width: '100%',
     textAlign: 'left',
     paddingLeft: 25,
@@ -216,12 +212,12 @@ const styles = StyleSheet.create({
   bt_receita: {
     textAlign: 'center',
     color: '#00BFFF',
-    fontFamily: 'Verdana',
-    fontWeight: 'bold',
-    height: 50,
+    fontFamily: 'BalooThamni',
+    fontSize: 15,
+    height: 35,
     borderWidth: 4,
     borderColor: "#CCCCCC",
-    padding: 10,
+    padding: 3,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,

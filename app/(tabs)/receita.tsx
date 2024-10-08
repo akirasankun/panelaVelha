@@ -1,4 +1,8 @@
-import { View, Text, StyleSheet, TextInput, Pressable, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Pressable, Image,FlatList } from 'react-native'
+//todo: Ajustar o titulo a imagem é menor e o nome e avaliacao da receita estao do lado da imagem
+//todo: Do lado do nome do usuario tem um botao de compartilhar 
+//todo: Pesquisar como faz para inserir o video.
+
 
 
 export default function Receitas() {
@@ -18,16 +22,20 @@ export default function Receitas() {
             </View>
             <View style={{ width: '20%' }}><Text style={comp_styles.resumo_hora}>4 horas</Text></View>
           </View>
-          <View style={comp_styles.body}><Text style={comp_styles.body_text}>Feito com poucos ingredientes para você, não esqueça de avaliar</Text></View>
-          <View>
-            <View style={comp_styles.footer}>
-              <View style={comp_styles.footer_botao}><Pressable style={styles.bt_receita} >VER RECEITA</Pressable ></View>
-              <View style={comp_styles.footer_avaliacao}>
-                <View><Text>Estrelas</Text></View>
-                <View><Text>4,9 mi avaliações </Text></View>
-              </View>
-            </View>
+          <View style={comp_styles.body}>
+            <Pressable style={styles.space}><Text style={comp_styles.body_text}>Feito com poucos ingredientes para você, não esqueça de avaliar</Text></Pressable>
+            <Pressable style={styles.space}><Text style={comp_styles.body_text}>Video se tiver!</Text></Pressable>
+            <Pressable style={styles.space}>
+              <FlatList data={[{key: 'Feijão Preto'},{key: 'Rabo de porco'},{key: 'Bacon'}]} renderItem={({item}) => <Text>* {item.key}</Text>}>
+              </FlatList>
+            </Pressable>
+              
+              
+            <Pressable style={styles.space}><Text style={comp_styles.body_text}>Modo de preparo</Text></Pressable>
+            <Pressable style={styles.space}><Text style={comp_styles.body_text}>Avaliacao</Text></Pressable>
           </View>
+
+          
         </View>
       </View>
     </View>
@@ -57,7 +65,6 @@ const comp_styles = StyleSheet.create({
   head: {
     flex: 1,
     borderColor: '#cccccc',
-
     flexDirection: 'row'
   },
 
@@ -106,9 +113,8 @@ const comp_styles = StyleSheet.create({
 
   resumo_user: {
     color: "#000",
-    fontWeight: 'bold',
     fontSize: 18,
-    fontFamily: 'Verdan',
+    fontFamily: 'BalooThamni',
     width: '100%',
     paddingLeft: 5,
     paddingBottom: 5,
@@ -117,9 +123,8 @@ const comp_styles = StyleSheet.create({
 
   resumo_titulo: {
     color: "#000",
-    fontWeight: 'bold',
     fontSize: 20,
-    fontFamily: 'Verdan',
+    fontFamily: 'BalooThamni',
     width: '100%',
     paddingLeft: 5,
   },
@@ -137,6 +142,13 @@ const comp_styles = StyleSheet.create({
 
 
 const styles = StyleSheet.create({
+  space: {
+    backgroundColor: "#FFF",
+    textAlign: "left",
+    borderBottomWidth: 4,
+    borderBottomColor: "#FFB266",
+    width: '100%'
+  },
   page: {
     flex: 1,
     padding: 20,
@@ -144,19 +156,18 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    flex: 1,
-    backgroundColor: "#CEBBBB",
+    backgroundColor: "#CCC",
     textAlign: "left",
     borderBottomWidth: 4,
     borderBottomColor: "#A17878",
     width: '100%',
-    height: 300
+    height: 60
   },
   title_text: {
     color: "#A17878",
     fontWeight: 'bold',
-    fontSize: 30,
-    fontFamily: 'Verdan',
+    fontSize: 32,
+    fontFamily: 'BalooThamni',
     width: '100%',
     textAlign: 'left',
     paddingLeft: 25,
