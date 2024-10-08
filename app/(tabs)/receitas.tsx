@@ -1,20 +1,21 @@
 import { View, Text, StyleSheet, TextInput, Pressable,Image,ScrollView } from 'react-native'
-
+import { styles_default } from '../../constants/Styles'; // Ajuste o caminho
 
 export default function Receitas() {
   return (
     <View style={styles.page}>
-      <ScrollView>
-      <View style={styles.title}>
-        <Pressable >
-          <Text style={styles.title_Text}>Panela Velha</Text>
-        </Pressable>
+      <View style={styles_default.title}>
+        <text style={styles_default.title_text}>Receita</text>
       </View>
+      <ScrollView>
       <View style={styles.receitas}>
-      <Pressable >
-          <Text style={styles.title_Text}>Receitas</Text>
+        
+        <Pressable >
+          <Text style={styles_default.title_Text}>Receitas</Text>
         </Pressable>
         <Card login='@Akira' titulo='Frango Xadrez' capa={require("../../assets/images/feijoada.png")}></Card>
+        <Card login='@Jorge' titulo='Feijoada' capa={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}></Card>
+        <Card login='@Jorge' titulo='Feijoada' capa={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}></Card>
         <Card login='@Jorge' titulo='Feijoada' capa={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}></Card>
       </View>
       </ScrollView>
@@ -32,7 +33,7 @@ const Card = (prop) => <View style={comp_styles.componente}>
   </View>
   <View style={{width:'20%'}}><Pressable ><Text style={comp_styles.resumo_hora}>4 horas</Text></Pressable></View>
 </View>
-<View style={comp_styles.body}><Pressable ><Text style={comp_styles.body_Text}>Feito com poucos ingredientes para você, não esqueça de avaliar</Text></Pressable></View>
+<View style={comp_styles.body}><Pressable ><Text style={comp_styles.body_Text}>Feito com poucos ingredientes oikokr</Text></Pressable></View>
 <View>
 <View style={comp_styles.footer}>
   <View style={comp_styles.footer_botao}><Pressable style={styles.bt_receita} >VER RECEITA</Pressable ></View>
@@ -146,25 +147,6 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     padding: 20
-  },
-
-  title: {
-    backgroundColor: "#CCC",
-    textAlign: "left",
-    borderBottomWidth: 4,
-    borderBottomColor: "#A17878",
-    width: '100%',
-    height: 60
-  },
-
-  title_Text: {
-    color: "#FFB266",
-    fontWeight: 'bold',
-    fontSize: 30,
-    fontFamily: 'BalooThamni',
-    width: '100%',
-    textAlign: 'left',
-    paddingLeft: 25,
   },
 
   receitas:{

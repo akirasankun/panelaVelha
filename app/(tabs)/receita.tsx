@@ -1,15 +1,29 @@
 import { View, Text, StyleSheet, TextInput, Pressable, Image,FlatList } from 'react-native'
+import { WebView } from 'react-native-webview';
+import YouTube from 'react-youtube';
+import { styles_default } from '../../constants/Styles'; // Ajuste o caminho
 //todo: Ajustar o titulo a imagem é menor e o nome e avaliacao da receita estao do lado da imagem
 //todo: Do lado do nome do usuario tem um botao de compartilhar 
 //todo: Pesquisar como faz para inserir o video.
-
+//todo: Icone de voltar no titulo
 
 
 export default function Receitas() {
+  const videoId = 'dlIfc5adZKc'; // Substitua pelo ID do seu vídeo
+
+  const opts = {
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1, // 1 para autoplay, 0 para não
+    },
+  };
+
   return (
     <View style={styles.page}>
-      <View style={styles.title}>
-        <text style={styles.title_text}>Receita</text>
+      <View style={styles_default.title}>
+        <text style={styles_default.title_text}>Receita</text>
       </View>
       <View style={styles.receitas}>
         <View style={comp_styles.componente}>
@@ -24,7 +38,7 @@ export default function Receitas() {
           </View>
           <View style={comp_styles.body}>
             <Pressable style={styles.space}><Text style={comp_styles.body_text}>Feito com poucos ingredientes para você, não esqueça de avaliar</Text></Pressable>
-            <Pressable style={styles.space}><Text style={comp_styles.body_text}>Video se tiver!</Text></Pressable>
+            <YouTube videoId={videoId} opts={opts} onReady={this._onReady} />
             <Pressable style={styles.space}>
               <FlatList data={[{key: 'Feijão Preto'},{key: 'Rabo de porco'},{key: 'Bacon'}]} renderItem={({item}) => <Text>* {item.key}</Text>}>
               </FlatList>
@@ -153,24 +167,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     flexDirection: 'column'
-  },
-
-  title: {
-    backgroundColor: "#CCC",
-    textAlign: "left",
-    borderBottomWidth: 4,
-    borderBottomColor: "#A17878",
-    width: '100%',
-    height: 60
-  },
-  title_text: {
-    color: "#A17878",
-    fontWeight: 'bold',
-    fontSize: 32,
-    fontFamily: 'BalooThamni',
-    width: '100%',
-    textAlign: 'left',
-    paddingLeft: 25,
   },
 
   receitas: {
